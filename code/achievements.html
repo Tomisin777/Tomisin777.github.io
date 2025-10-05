@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements & Leadership - Tomisin Adebari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #333;
+            background: #fff;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(5px);
+            padding: 25px 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 150px 50px 40px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #666;
+            max-width: 700px;
+        }
+
+        .filter-section {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding: 0 50px 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: transparent;
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #666;
+        }
+
+        .filter-btn:hover {
+            border-color: #000;
+            color: #000;
+        }
+
+        .filter-btn.active {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .achievements-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 50px;
+        }
+
+        .achievement-card {
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding: 35px 0;
+            transition: opacity 0.3s;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .achievement-card:hover {
+            opacity: 0.7;
+        }
+
+        .achievement-image {
+            width: 200px;
+            height: 150px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .achievement-content {
+            flex: 1;
+        }
+
+        .achievement-card h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .achievement-card .meta {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 15px;
+        }
+
+        .achievement-card p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .achievement-card a {
+            color: #000;
+            text-decoration: underline;
+            font-size: 0.95rem;
+            margin-right: 15px;
+            transition: opacity 0.3s;
+        }
+
+        .achievement-card a:hover {
+            opacity: 0.6;
+        }
+
+        .contact-section {
+            max-width: 1200px;
+            margin: 60px auto 0;
+            padding: 60px 50px 40px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .contact-section h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .contact-section p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-section a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 50px;
+            color: #999;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .achievement-card {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .achievement-image {
+                width: 100%;
+                height: 200px;
+            }
+            nav .container, .hero, .achievements-container, .filter-section, .contact-section {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Tomisin Adebari</a>
+            <ul>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="beyond.html">Beyond the Lab</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Achievements & Leadership</h1>
+        <p>Recognition, awards, and initiatives that reflect my commitment to innovation, community, and making an impact.</p>
+    </div>
+
+    <div class="filter-section">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="honors">Honors & Programs</button>
+        <button class="filter-btn" data-filter="awards">Awards</button>
+        <button class="filter-btn" data-filter="leadership">Leadership</button>
+        <button class="filter-btn" data-filter="hackathons">Hackathons</button>
+        <button class="filter-btn" data-filter="press">Press & Media</button>
+    </div>
+
+    <div class="achievements-container">
+        <!-- HONORS & PROGRAMS -->
+        <div class="achievement-card" data-category="honors press">
+            <div class="achievement-image">
+                <!-- <img src="dubois-award.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"> -->
+                Award/Photo
+            </div>
+            <div class="achievement-content">
+                <h3>W.E.B. Du Bois Scholar</h3>
+                <p class="meta">Harvard T.H. Chan School of Public Health | 2024</p>
+                <p>Selected as one of 20 students nationwide for the inaugural Du Bois Scholars Program. Conducted research in computational biology while engaging in critical scholarship on structural inequality in healthcare.</p>
+                <a href="#" target="_blank">Harvard Gazette</a>
+                <a href="#" target="_blank">Morgan State News</a>
+                <a href="#" target="_blank">Program Feature</a>
+            </div>
+        </div>
+
+        <div class="achievement-card" data-category="honors">
+            <div class="achievement-image">
+                Photo
+            </div>
+            <div class="achievement-content">
+                <h3>4.0 GPA - Bachelor of Science</h3>
+                <p class="meta">Morgan State University | Biological Sciences | 2025</p>
+                <p>Graduated with perfect 4.0 GPA while conducting research, volunteering at hospitals, and establishing campus initiatives.</p>
+            </div>
+        </div>
+
+        <!-- LEADERSHIP -->
+        <div class="achievement-card" data-category="leadership press">
+            <div class="achievement-image">
+                Photo
+            </div>
+            <div class="achievement-content">
+                <h3>University Innovation Fellows (UIF)</h3>
+                <p class="meta">Morgan State University | Year</p>
+                <p>Established a tech innovation space on campus that made press news. Collaborated to create a hub for innovation, entrepreneurship, and technology development at Morgan State.</p>
+                <a href="#" target="_blank">Press Coverage</a>
+                <a href="#" target="_blank">Tech Space Launch</a>
+            </div>
+        </div>
+
+        <div class="achievement-card" data-category="leadership">
+            <div class="achievement-image">
+                Photo
+            </div>
+            <div class="achievement-content">
+                <h3>The Inspire Blog - Founder & Writer</h3>
+                <p class="meta">Ongoing</p>
+                <p>Founded mental health and wellness platform supporting students through academic challenges. Writing about mental wellness, personal growth, and navigating pre-med life.</p>
+                <a href="https://theinspireblog.com" target="_blank">Visit Blog</a>
+            </div>
+        </div>
+
+        <div class="achievement-card" data-category="leadership">
+            <div class="achievement-image">
+                Photo
+            </div>
+            <div class="achievement-content">
+                <h3>[Your Club/Organization Name]</h3>
+                <p class="meta">Year</p>
+                <p>Description of club you established or event you organized on campus.</p>
+            </div>
+        </div>
+
+        <!-- AWARDS -->
+        <div class="achievement-card" data-category="awards">
+            <div class="achievement-image">
+                Photo
+            </div>
+            <div class="achievement-content">
+                <h3>Award Name 1</h3>
+                <p class="meta">Year</p>
+                <p>Brief description of the award and what it recognizes.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card" data-category="awards">
+            <div class="achievement-image">
+                Photo
+            </div>
+            <div class="achievement-content">
+                <h3>Award Name 2</h3>
+                <p class="meta">Year</p>
+                <p>Brief description of the award and what it recognizes.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card" data-category="awards">
+            <div class="achievement-image">
+                Photo
+            </div>
+            <div class="achievement-content">
+                <h3>Blog Recognition/Award</h3>
+                <p class="meta">Year</p>
+                <p>Award or recognition for The Inspire Blog work.</p>
+            </div>
+        </div>
+
+        <!-- HACKATHONS -->
+        <div class="achievement-card" data-category="hackathons">
+            <div class="achievement-image">
+                Photo
+            </div>
+            <div class="achievement-content">
+                <h3>Hackathon Name</h3>
+                <p class="meta">Year | Prize/Placement</p>
+                <p>What you built, what you won, impact of the project. Include tech stack used.</p>
+                <a href="#" target="_blank">Project Link</a>
+            </div>
+        </div>
+
+        <div class="achievement-card" data-category="hackathons">
+            <div class="achievement-image">
+                Photo
+            </div>
+            <div class="achievement-content">
+                <h3>Competition Name</h3>
+                <p class="meta">Year | Result</p>
+                <p>Details about the competition and your achievement.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <h2>Get in Touch</h2>
+        <p>Interested in collaboration or learning more about my work?</p>
+        <a href="mailto:adebaritomi05@gmail.com">adebaritomi05@gmail.com</a>
+    </div>
+
+    <footer>
+        <p>© 2025 Tomisin Adebari</p>
+    </footer>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const achievementCards = document.querySelectorAll('.achievement-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                achievementCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category.includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

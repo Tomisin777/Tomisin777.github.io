@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Tomisin Adebari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #333;
+            background: #fff;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(5px);
+            padding: 25px 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 150px 50px 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #666;
+            max-width: 700px;
+        }
+
+        .filter-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 50px 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            background: transparent;
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #666;
+        }
+
+        .filter-btn:hover {
+            border-color: #000;
+            color: #000;
+        }
+
+        .filter-btn.active {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 50px;
+        }
+
+        .project-item {
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding: 40px 0;
+            transition: opacity 0.3s;
+        }
+
+        .project-item:hover {
+            opacity: 0.7;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+            gap: 20px;
+        }
+
+        .project-item h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #000;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+
+        .tag {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .project-item p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+            max-width: 800px;
+        }
+
+        .project-link {
+            color: #000;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+            transition: opacity 0.3s;
+        }
+
+        .project-link:hover {
+            opacity: 0.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 50px;
+            color: #999;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .project-header {
+                flex-direction: column;
+            }
+            nav .container, .hero, .projects-container, .filter-section {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Tomisin Adebari</a>
+            <ul>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="beyond.html">Beyond the Lab</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Projects</h1>
+        <p>Computational biology, machine learning, and research tools at the intersection of science and healthcare.</p>
+    </div>
+
+    <div class="filter-section">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="rp">Research Projects</button>
+        <button class="filter-btn" data-filter="pp">Personal Projects</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+        <button class="filter-btn" data-filter="compbio">Computational Biology</button>
+        <button class="filter-btn" data-filter="compchem">Computational Chemistry</button>
+        <button class="filter-btn" data-filter="wl">Wet Lab Research </button>
+    </div>
+
+    <div class="projects-container">
+        <div class="project-item" data-category="ml pp">
+            <div class="project-header">
+                <h3>Music Genre Classifier</h3>
+                <div class="project-tags">
+                    <span class="tag">ML</span>
+                    <span class="tag">Personal Project</span>
+                </div>
+            </div>
+            <p>Deep learning model to classify music into 10 genres using Convolutional Neural Networks (CNNs) and TensorFlow. The model analyzes mel spectrograms (visual representations of audio) to identify musical patterns unique to each genre.</p>
+            <a href="https://github.com/Tomisin777/music-genre-classifier" class="project-link">View on Github</a>
+        </div>
+
+        <div class="project-item" data-category="ml pp">
+            <div class="project-header">
+                <h3>Cardiovascular Disease Prediction</h3>
+                <div class="project-tags">
+                    <span class="tag">ML</span>
+                    <span class="tag">Healthcare</span>
+                    <span class="tag">Personal Project</span>
+                </div>
+            </div>
+            <p>ML classification model optimized for clinical screening, achieving 100% sensitivity in heart disease detection through precision threshold optimization.</p>
+            <a href="https://github.com/Tomisin777/cardiovascular-disease-prediction" class="project-link">View on GitHub</a>
+        </div>
+
+        <div class="project-item" data-category="compbio rp">
+            <div class="project-header">
+                <h3>Sex Differences in Glioblastoma Research</h3>
+                <div class="project-tags">
+                    <span class="tag">Genomics</span>
+                    <span class="tag">Networks</span>
+                    <span class="tag">Research</span>
+                </div>
+            </div>
+            <p>Using PANDA and gene regulatory network analysis to identify sex-specific pathways in glioblastoma vs low-grade glioma progression.</p>
+            <a href="add link to quackenbush here " class="project-link">Learn More</a>
+        </div>
+
+        <div class="project-item" data-category="ml pp">
+            <div class="project-header">
+                <h3>AMR Spread Prediction Blueprint</h3>
+                <div class="project-tags">
+                    <span class="tag">AI/ML</span>
+                    <span class="tag">Public Health</span>
+                    <span class="tag">Personal Project</span>
+                </div>
+            </div>
+            <p>Designed AI architecture to estimate geographical trends of Antimicrobial Resistance spread and predict future resistance patterns by location.</p>
+            <!--a href="#" class="project-link">Learn More</a> -->
+        </div>
+
+        <div class="project-item" data-category="compbio rp">
+            <div class="project-header">
+                <h3>Clonal Hematopoiesis Analysis</h3>
+                <div class="project-tags">
+                    <span class="tag">Genomics</span>
+                    <span class="tag">Cancer Research</span>
+                </div>
+            </div>
+            <p>Computational analysis of liquid biopsies from 54 cancer patients, identifying 128 CHIP-derived variants.</p>
+            <a href="#" class="project-link">Learn More</a>
+        </div>
+
+        <div class="project-item" data-category="rp, compchem">
+            <div class="project-header">
+                <h3>Molecular Modeling - Rhenium Complexes</h3>
+                <div class="project-tags">
+                    <span class="tag">Computational Chemistry</span>
+                </div>
+            </div>
+            <p>Designed and optimized 5+ molecular models investigating emission spectra and structure-activity relationships for cytotoxicity research.</p>
+            <a href="#" class="project-link">Learn More</a>
+        </div>
+
+        <div class="project-item" data-category="rp wl">
+            <div class="project-header">
+                <h3>Methylation Marker Analysis</h3>
+                <div class="project-tags">
+                    <span class="tag">Epigenetics</span>
+                    <span class="tag">Cancer Research</span>
+                </div>
+            </div>
+            <p>Analytical framework for methylated gene markers in cervical cancer early detection using QM-MS-PCR.</p>
+            <a href="#" class="project-link">Learn More</a>
+        </div>
+
+        <div class="project-item" data-category="rp wl">
+            <div class="project-header">
+                <h3>Multi-Cancer Early Detection</h3>
+                <div class="project-tags">
+                    <span class="tag">Epigenetics</span>
+                    <span class="tag">Cancer Research</span>
+                </div>
+            </div>
+            <p>Leveraging metrics of DNA methylation-based epigenetic instability for pan-cancer early detection assay development.</p>
+            <a href="#" class="project-link">Learn More</a>
+        </div>
+    </div>
+
+    <div class="projects-container" style="padding-top: 60px; border-top: 1px solid rgba(0,0,0,0.1);">
+        <h2 style="font-size: 1.8rem; font-weight: 400; margin-bottom: 20px; color: #000;">Get in Touch</h2>
+        <p style="font-size: 1rem; color: #666; margin-bottom: 20px;">Questions about my projects or interested in collaboration?</p>
+        <a href="mailto:adebaritomi05@gmail.com" style="color: #000; text-decoration: none; border-bottom: 1px solid #000; padding-bottom: 2px;">adebaritomi05@gmail.com</a>
+    </div>
+
+    <footer>
+        <p>© 2025 Tomisin Adebari</p>
+    </footer>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                projectItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category.includes(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

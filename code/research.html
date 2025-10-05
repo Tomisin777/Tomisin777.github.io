@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Tomisin Adebari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #333;
+            background: #fff;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(5px);
+            padding: 25px 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 150px 50px 80px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #666;
+            max-width: 700px;
+        }
+
+        .timeline {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 50px;
+        }
+
+        .timeline-item {
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding: 50px 0;
+            display: grid;
+            grid-template-columns: 150px 200px 1fr;
+            gap: 40px;
+            transition: opacity 0.3s;
+        }
+
+        .timeline-image {
+            width: 200px;
+            height: 200px;
+            background: #f5f5f5;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .timeline-item:hover {
+            opacity: 0.7;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: #999;
+            padding-top: 5px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .timeline-content .meta {
+            font-size: 0.95rem;
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .timeline-content p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .timeline-content ul {
+            margin: 15px 0 15px 20px;
+            color: #666;
+        }
+
+        .timeline-content ul li {
+            margin-bottom: 8px;
+        }
+
+        .timeline-content a {
+            color: #000;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+            transition: opacity 0.3s;
+        }
+
+        .timeline-content a:hover {
+            opacity: 0.6;
+        }
+
+        .section-header {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 40px 50px 20px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #000;
+        }
+
+        .publications {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 50px 80px;
+        }
+
+        .pub-item {
+            padding: 30px 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .pub-item h4 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .pub-item .year {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .pub-item p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 50px;
+            color: #999;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .timeline-image {
+                width: 100%;
+                height: 180px;
+            }
+            nav .container, .hero, .timeline, .section-header, .publications {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Tomisin Adebari</a>
+            <ul>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+                <li><a href="beyond.html">Beyond the Lab</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+    <h1>Research</h1>
+    <p>From cancer epigenetics to computational genomics, my work spans wet lab techniques and bioinformatics analysis.</p>
+    
+    <!-- Add this button -->
+    <div style="margin-top: 30px;">
+        <a href="projects.html#research-projects" style="color: #000; text-decoration: none; border: 1px solid #000; padding: 12px 28px; border-radius: 2px; display: inline-block; transition: all 0.3s;">
+            View Research Projects →
+        </a>
+    </div>
+</div>
+
+  <!-- Update each timeline item with links to dedicated pages -->
+
+<div class="timeline-item">
+    <div class="timeline-date">Sept 2024 – August 2025</div>
+    <div class="timeline-image">
+        <img src="easwaran-lab.jpg" alt="Lab">
+    </div>
+    <div class="timeline-content">
+        <h3>Laboratory Technician | Cancer Epigenetics</h3>
+        <p class="meta">Johns Hopkins Medicine • Easwaran Lab</p>
+        <p>Optimizing DNA/RNA extraction protocols for multi-cancer early detection assay.</p>
+        <a href="easwaran-lab.html">Read Full Story →</a>
+    </div>
+</div>
+
+<div class="timeline-item">
+    <div class="timeline-date">Aug – Dec 2024</div>
+    <div class="timeline-image">
+        <img src="morgan-lab.jpg" alt="Lab">
+    </div>
+    <div class="timeline-content">
+        <h3>Computational Research Intern</h3>
+        <p class="meta">Morgan State University • Dr. Roosevelt Shaw Lab</p>
+        <p>Designed and optimized molecular models of rhenium complexes.</p>
+        <a href="morgan-state.html">Read Full Story →</a>
+    </div>
+</div>
+
+<div class="timeline-item">
+    <div class="timeline-date">May – Aug 2024</div>
+    <div class="timeline-image">
+        <img src="harvard-lab.jpg" alt="Harvard">
+    </div>
+    <div class="timeline-content">
+        <h3>Harvard Du-Bois Scholar | Computational Research</h3>
+        <p class="meta">Harvard T.H. Chan School of Public Health • Quackenbush Lab</p>
+        <p>One of 20 students selected nationwide for inaugural Du Bois Scholars Program.</p>
+        
+        <!-- Press links -->
+        <div style="margin: 20px 0;">
+            <span style="color: #999; font-size: 0.9rem;">Featured in: </span>
+            <a href="https://legacyofslavery.harvard.edu/hbcu-initiatives/du-bois-scholars-program/meet-the-du-bois-scholars/full-biographies-of-2024-du-bois-scholars/#tomisinadebari" target="_blank" style="text-decoration: underline;">Harvard</a>
+            <a href="https://hsph.harvard.edu/biostatistics/news/spotlight-on-the-du-bois-scholars-program/" target="_blank" style="text-decoration: underline; margin-left: 12px;">Harvard T.H. Chan News</a>
+            <a href="https://www.morgan.edu/news/the-morgan-way" target="_blank" style="text-decoration: underline; margin-left: 12px;">Morgan State News</a>
+            <a href="https://hsph.harvard.edu/biostatistics/news/du-bois-scholars-program-summer-research-presentations-8-6/" target="_blank" style="text-decoration: underline; margin-left: 12px;">Harvard News</a>
+        </div>
+        
+        <a href="dubois-research.html">Read Full Story →</a>
+    </div>
+</div>
+
+<div class="timeline-item">
+    <div class="timeline-date">Oct 2023 – May 2024</div>
+    <div class="timeline-image">
+        <img src="sukumar-lab.jpg" alt="Lab">
+    </div>
+    <div class="timeline-content">
+        <h3>Laboratory Technician | Cancer Research</h3>
+        <p class="meta">Johns Hopkins Medicine • Sukumar Lab</p>
+        <p>Developed methylated gene markers for cervical cancer early detection.</p>
+        <a href="sukumar-lab.html">Read Full Story →</a>
+    </div>
+</div>
+
+<div class="timeline-item">
+    <div class="timeline-date">May – Aug 2023</div>
+    <div class="timeline-image">
+        <img src="anagnostou-lab.jpg" alt="Lab">
+    </div>
+    <div class="timeline-content">
+        <h3>Hopkins-MSU Cancer Research Intern</h3>
+        <p class="meta">Johns Hopkins Medicine • Anagnostou Lab</p>
+        <p>Examined clonal hematopoiesis in 54 cancer patients from liquid biopsies.</p>
+        <div style="margin: 20px 0;">
+        <span style="color: #999; font-size: 0.9rem;">Featured in: </span>
+        <a href="https://www.morgan.edu/office-of-undergraduate-research/research-internships/cancer-research-summer-program" target="_blank" style="text-decoration: underline;">Morgan News</a>
+        </div>
+        <a href="anagnostou-lab.html">Read Full Story →</a>
+    </div>
+</div>
+
+    <div class="section-header" style="margin-top: 40px;">
+        <h2>Get in Touch</h2>
+    </div>
+
+    <div class="publications" style="padding-bottom: 40px;">
+        <p style="font-size: 1rem; color: #666; margin-bottom: 20px;">Interested in collaboration or have questions about my research?</p>
+        <a href="mailto:adebaritomi05@gmail.com" style="color: #000; text-decoration: none; border-bottom: 1px solid #000; padding-bottom: 2px;">adebaritomi05@gmail.com</a>
+    </div>
+
+    <footer>
+        <p>© 2025 Tomisin Adebari</p>
+    </footer>
+</body>
+</html>
